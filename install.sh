@@ -41,20 +41,29 @@ then
   return 1
 fi
 
-TARGET_PLUGIN_DIR="$HOME/Library/Preferences/Autodesk/maya/$TARGET_VERSION/plug-ins"
-TARGET_SCRIPT_DIR="$HOME/Library/Preferences/Autodesk/maya/$TARGET_VERSION/scripts"
-if [[ ! -d "$TARGET_PLUGIN_DIR" ]] || [[ ! -d "$TARGET_SCRIPT_DIR" ]]
+TARGET_ROOT_DIR="$HOME/Library/Preferences/Autodesk/maya/$TARGET_VERSION"
+TARGET_PLUGIN_DIR="$TARGET_ROOT_DIR/plug-ins"
+TARGET_SCRIPT_DIR="$TARGET_ROOT_DIR/scripts"
+if [[ ! -d "$TARGET_ROOT_DIR" ]]
 then
     echo "$ERROR"
     echo "Could not find Maya plugin directory on your system."
     echo "Please make sure you are specifying the correct Maya version."
     echo ""
-    echo "Expected paths:"
-    echo "  $WARNSTART$TARGET_PLUGIN_DIR"
-    echo "  $TARGET_SCRIPT_DIR$COLOREND"
+    echo "Expected path:"
+    echo "  $WARNSTART$TARGET_ROOT_DIR$COLOREND"
     echo ""
     return 1
 fi
+
+if [ ! -d "$TARGET_PLUGIN_DIR" ]; then
+  mkdir -p "$TARGET_PLUGIN_DIR";
+fi
+
+if [ ! -d "$TARGET_SCRIPT_DIR" ]; then
+  mkdir -p "$TARGET_SCRIPT_DIR";
+fi
+
 
 cp "$PLUGIN_FILE" "$TARGET_PLUGIN_DIR/$(basename $PLUGIN_FILE)"
 cp "$EXPORT_SCRIPT" "$TARGET_SCRIPT_DIR/$(basename $EXPORT_SCRIPT)"
