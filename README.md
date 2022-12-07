@@ -6,6 +6,8 @@ glTF exporter plugin for Autodesk Maya
 This plugin has been adjusted to work specifically with ClassDojo's tech stack. 
 This plugin is compatible with most modern versions of Maya.  Tested specifically with Maya 2023.
 
+As a friendly note, the fact there isn't first-class support for this from Autodesk is appalling. [Go Blender](https://www.blender.org/).
+
 # Installation
 
 1. Clone this repository.
