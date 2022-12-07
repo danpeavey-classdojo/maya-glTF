@@ -14,7 +14,7 @@ This plugin is compatible with most modern versions of Maya.  Tested specificall
 
 For example, for Maya 2023:
 ```shell
-$ ./install 2023 
+./install 2023 
 ```
 
 This presently only supports installation for Mac OS systems, but the scripts work on Windows and Linux as well. [Read this Autodesk Knowledgebase article on how to find the correct folders](https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2023/ENU/Maya-Customizing/files/GUID-FA51BD26-86F3-4F41-9486-2C3CF52B9E17-htm.html). I also encourage reading the installation script to understand how the scripts are installed.
