@@ -28,9 +28,9 @@ Most of the glTF spec has been implemented, but this is still a work in progress
 ### Exporting through the File menu
 1. Launch Maya.
 1. Open the Plug-in Manager
-   - ![Plug-in Manager 1](https://github.com/danpeavey-classdojo/maya-glTF/blob/master/doc/images/find-plug-man.PNG)
+   - ![Plug-in Manager 1](https://raw.githubusercontent.com/danpeavey-classdojo/maya-glTF/main/doc/images/find-plug-man.PNG)
 1. Check on "Loaded" for "glTFTranslator.py" plug-in.
-   - ![Plug-in Manager 2](https://github.com/danpeavey-classdojo/maya-glTF/blob/master/doc/images/plug-in-man.PNG)
+   - ![Plug-in Manager 2](https://raw.githubusercontent.com/danpeavey-classdojo/maya-glTF/main/doc/images/plug-in-man.PNG)
 1. Export your scene: 
    - File->Export All...
    - ~~File->Export Selection~~ Exporting for selections are not yet implemented.
