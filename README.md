@@ -42,13 +42,10 @@ Most of the glTF spec has been implemented, but this is still a work in progress
 - With the "Default File Extensions" checked, entering an extensionless filename will create a ".glb" file by default.
 - The "Resources Format" setting only applies to files explictly named with a ".gltf" extension, and translates to the three different modes supported by that file extension.
 
- Only applies to .gltf format. Valid value: 'bin', 'source', 'embedded'. bin - A single .bin file next to the .gltf file. source - Images are copied next to the .gltf file. embedded - Everything is embedded within the .gltf.
-
-
 # Exporting from Script
    ```python
    import glTFExport   
-   glTFExport.export(r"C:\Temp\test.glb", resource_format='bin', anim='keyed', vflip=True)
+   glTFExport.export(r"/path/to/test.glb", resource_format='bin', anim='keyed', vflip=True)
    ```
 
 ## Export parameters
