@@ -1,15 +1,22 @@
 # maya-glTF
 glTF exporter plugin for Autodesk Maya
 
-This plugin is compatible with most modern versions of Maya.  Tested with Maya 2015+.  Most of the glTF spec has been implemented, but this is still a work in progress.  For best material results use StingrayPBS shader.  Report any issues [here](https://github.com/matiascodesal/maya-glTF/issues)!
+# ClassDojo Modifications
 
-![Water Bottle Export](https://github.com/matiascodesal/maya-glTF/blob/master/doc/images/water-bottle.png)  
+This plugin has been adjusted to work specifically with ClassDojo's tech stack. 
+This plugin is compatible with most modern versions of Maya.  Tested specifically with Maya 2023.
 
-## Installation
-1. Download the ZIP file using the green button at the top of this page.  
-1. Extract the ZIP and copy the files to their appropriate folders:  
-- `glTFExport.py` and `glTFTranslatorOpts.mel` from the `scripts` folder need to be copied to the scripts folder here:   
+# Installation
 
+Run `./install.sh` from the root of the repository.
+
+
+# Note from the original Author
+
+Most of the glTF spec has been implemented, but this is still a work in progress.  For best material results use StingrayPBS shader.
+
+
+## Old Install Instructions 
 | OS | Path |
 |---------|----------|
 |(Windows)|  `C:/Users/<username>/Documents/maya/<version>/scripts`|  
@@ -24,7 +31,7 @@ This plugin is compatible with most modern versions of Maya.  Tested with Maya 2
 (Mac OS X) |`Library/Preferences/Autodesk/maya/<version>/plug-ins`  
 (Linux)   | `$MAYA_APP_DIR/maya/<version>/plug-ins`  
 
-## Usage
+# Usage
 
 ### Exporting through the File menu
 1. Launch Maya.
@@ -32,19 +39,20 @@ This plugin is compatible with most modern versions of Maya.  Tested with Maya 2
    - ![Plug-in Manager 1](https://github.com/matiascodesal/maya-glTF/blob/master/doc/images/find-plug-man.PNG)
 1. Check on "Loaded" for "glTFTranslator.py" plug-in.
    - ![Plug-in Manager 2](https://github.com/matiascodesal/maya-glTF/blob/master/doc/images/plug-in-man.PNG)
-1. Export your scene: File->Export All...
-   - File->Export Selection... not currently supported.
+1. Export your scene: 
+   - File->Export All...
+   - ~~File->Export Selection is not yet implemented~~.
 1. Choose "glTF Export" for the "Files of Type" option.
-1. Optionally, set any file type specific options as well.
-   - ![File options](https://github.com/matiascodesal/maya-glTF/blob/master/doc/images/file-type-opts.PNG)
+1. Set file-specific options, then click "Export All".
 
 
-### Exporting as a part of a script
-```python
-import glTFExport   
-glTFExport.export(r"C:\Temp\test.glb", resource_format='bin', anim='keyed', vflip=True)
-```
-#### Export parameters
+# Exporting from Script
+   ```python
+   import glTFExport   
+   glTFExport.export(r"C:\Temp\test.glb", resource_format='bin', anim='keyed', vflip=True)
+   ```
+
+## Export parameters
 
 | Parameter | Description |   
 | --------- | ----------- |   
@@ -53,7 +61,7 @@ glTFExport.export(r"C:\Temp\test.glb", resource_format='bin', anim='keyed', vfli
 |anim|How to deal with animation. Valid values: 'none', 'keyed'.  **none** - Don't export animation. **keyed** - Respect current keys|   
 |vFlip|GL renderers want UVs flippedin V compared to Maya.  Set to False if you don't need to fix the flipping.|   
 
-## Current Features
+# Current Features
 - Export whole scene from Maya
 - Exports transform nodes and meshes with hierarchy
 - Exports single material shader per mesh currently.
