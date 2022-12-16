@@ -17,6 +17,7 @@ As a friendly note, the fact there isn't first-class support for this from Autod
 1. Clone this repository.
 2. In a terminal, open the repository.
 3. Run `./install.sh <MAYA_VERSION>` from the root of the repository.
+  - If you don't specify a version, the latest version found will be used.
 
 For example, for Maya 2023:
 ```shell
