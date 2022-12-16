@@ -8,6 +8,10 @@ This plugin is compatible with most modern versions of Maya.  Tested specificall
 
 As a friendly note, the fact there isn't first-class support for this from Autodesk is appalling. [Go Blender](https://www.blender.org/).
 
+# Development
+
+- [Maya command reference.](https://help.autodesk.com/cloudhelp/2023/CHS/Maya-Tech-Docs/CommandsPython/)
+
 # Installation
 
 1. Clone this repository.
@@ -71,4 +75,3 @@ Most of the glTF spec has been implemented, but this is still a work in progress
 - Node animation supported for translation, rotation, scale.
 - glTF and glb supported
 - Options for embedded binary data, single external bin, or preserved external images.
-   
