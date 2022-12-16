@@ -930,9 +930,20 @@ class Image(ExportItem):
                 shutil.copy(file_path, ExportSettings.out_dir)
             self.uri = file_name
         else:
-            with open(file_path, 'rb') as f:
-                img_bytes = f.read()
-            
+            try:
+                with open(file_path, 'rb') as f:
+                    img_bytes = f.read()
+            except FileNotFoundError:
+                err = "Image file cannot be found:\n{}".format(file_path)
+                maya.cmds.warning(err)
+                maya.cmds.confirmDialog(
+                    icon='critical',
+                    title='Image Reference Not Found',
+                    message=err,
+                    button=['OK'],
+                    defaultButton='OK',
+                    backgroundColor=[0.33, 0.21, 0.21])
+
             # Remove the temp qimage because resource_format isn't source
             if qimage:
                 os.remove(file_path)
